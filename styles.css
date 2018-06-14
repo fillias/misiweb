@@ -1,0 +1,275 @@
+/*  css reset  */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*  css reset  end */
+
+html {
+    background: linear-gradient(135deg, #e2e2e2 0%,#fefefe 100%); 
+    height: 100vh;
+}
+
+body {
+    font-family: 'Didact Gothic', sans-serif; helvetica, arial;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: .5em;
+    line-height: 1.3em;
+}
+
+h2 {
+    margin-top: .5em;
+    font-weight: bold;
+    font-size: 1.2em; 
+    margin-bottom: .5em; 
+    line-height: 1.3em;  
+}
+
+p {
+    line-height: 1.2em;
+}
+
+
+header ul {
+    font-weight: bold;
+    font-size: 1.5em;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:stretch;
+}
+
+header li {
+    text-align: center;
+    flex-basis: 100%;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+}
+
+
+header li:last-child {
+    border:none;
+}
+
+@media screen and (min-width:600px) {
+
+   header ul {
+       flex-wrap:nowrap;
+   } 
+
+    header li {
+        flex-basis: 100%;
+        border-right: 1px solid white;
+        border-bottom: none;
+    }
+
+}
+
+header a {
+    flex: 1;
+    color: white;
+    background: linear-gradient(to top, #c9de96 0%,#8ab66b 44%,#398235 100%);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.2s;
+    height: 30px;
+}
+
+header a:hover {
+    background: linear-gradient(to top, #c9de96 0%,#8ab66b 44%,#5fd356 100%);
+}
+
+
+/*  eof main */
+/************************/
+
+.section {
+    display: flex;
+    margin: 1em;
+    padding: 1em;
+}
+
+
+.col1 {
+    flex: 2 1 auto;
+}
+
+.col2 {
+    flex: 1 0 13%;
+}
+
+.red {
+    color: red;
+}
+
+.obrazek-titul {
+    width: 100%;
+    border-radius: 10px 10px 0px 10px;
+    border: 2px solid white;
+}
+
+/*************************/
+
+
+/*************************/
+/*  ORIO SPECIFIC  */
+
+.orioBG::after {
+    content: "";
+    background: url(obrazky/orioBG.jpg);
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; 
+}
+
+/* eof ORIO SPECIFIC */
+/*************************/
+
+
+.gallery-image {
+    margin-top: 10px;
+    transition: all 0.5s;
+    text-align: center;
+    flex: 1;
+    object-fit: cover;
+
+}
+
+.gallery-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.gallery-image-big {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+.gallery-big-background {
+    background: #e3e3e3;
+    background-size: cover;
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+
+.gallery-big-close {
+    font-size: 2em;
+    padding: .5em;
+    background: rgba(255,255,255,0.6);
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    z-index: 2;
+}
+
+
+.button-more {
+    display: inline-block;
+    margin-top: 10px;
+    width: 100%; 
+    padding: 15px;
+    background: brown;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-zpet {
+    position: fixed;
+    bottom: .3em;
+    right: .3em;
+    width: 5em; 
+    padding: 5px;
+    background: gray;
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.5s;
+    height: 2em;
+}
+
+
+@media screen and (max-width:600px) {
+
+    .section {
+        flex-direction: column;
+    }
+
+    .section-col {
+        margin-bottom: 3em;
+    }
+
+    .obrazek-titul {
+        max-width: 25em;
+    }
+
+}
+
+
+
